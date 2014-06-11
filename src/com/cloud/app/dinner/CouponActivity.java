@@ -1,19 +1,38 @@
 package com.cloud.app.dinner;
 
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+
+
+
+
+
+
+
+
+
+import com.cloud.app.debug.DebugUtil;
+import com.cloud.app.http.HttpSendRecv;
+import com.cloud.app.http.MapPackage;
+import com.cloud.app.other.CouponData;
+import com.cloud.app.utils.MD5;
+import com.google.gson.Gson;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 
@@ -26,18 +45,35 @@ public class CouponActivity extends Activity{
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.gridview);
+		
+//		String url="http://115.29.13.164/recommend.do?t=309343089034";
+//		MapPackage.setHead("-1","11111","1","1.1.2");
+//		MapPackage.setPara("category_id", "0");
+//		MapPackage.setRes("start", "1");
+//		MapPackage.setRes("count", "3");
+		
+		
+		MapPackage mp=new MapPackage();
+		mp.setPath("recommend.do?t=309343089034");
+		mp.setHead("-1", "11111","1.1.2");
+		mp.setPara("category_id","0");
+		mp.setRes("start", "1");
+		mp.setRes("count", "3");
+		
+
+		DebugUtil.i("test....head",mp.backHead().get("code"));
+		DebugUtil.i("test....para",mp.backPara().get("total"));
+		DebugUtil.i("test....result",mp.backResult().get(1).get("goods_no"));
 		lv=(GridView)findViewById(R.id.gridView1);
-//		from data value
-//		String[] item=new String[]{"image1","text1","image2","text2","image3","text3","image4","text4"};
-//		to data view
-//		int[] itemId=new int[]{R.id.imageView2,R.id.textview2,R.id.imageView3,R.id.textview3,R.id.imageView4,R.id.textview4,R.id.imageView5,R.id.textview5};
-//		key,value  array
+
+		
+		
 		String[] item=new String[]{"image1","text1"};
 		int[] itemId=new int[]{R.id.imageView2,R.id.textview2};
 		List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
 		Map<String,Object> map=null;
 		for(int i=0;i<50;i++){
-//			(key,value) set
+
 			map=new HashMap<String,Object>();
 			map.put("image1", R.drawable.ic_launcher);
 			map.put("text1",getString(R.string.first));
@@ -46,6 +82,7 @@ public class CouponActivity extends Activity{
 			
 		}
 		SimpleAdapter adapter=new SimpleAdapter(this, list, R.layout.gcoupon, item, itemId);
+		
 		lv.setAdapter(adapter);
 		lv.setOnItemClickListener(new OnItemClickListener(){
 			
@@ -62,58 +99,70 @@ public class CouponActivity extends Activity{
 		
 	}
 	
+	
+	
+	
+	
+//	private static final String SEP1 = "#";  
+//    private static final String SEP2 = "|"; 
+//    private static final String SEP3 = "="; 
+//    /** 
+//     * List转换String 
+//     *  
+//     * @param list 
+//     *            :需要转换的List 
+//     * @return String转换后的字符串 
+//     */ 
+//    public static String ListToString(List<?> list) {  
+//        StringBuffer sb = new StringBuffer();  
+//        if (list != null && list.size() > 0) {  
+//            for (int i = 0; i < list.size(); i++) {  
+//                if (list.get(i) == null || list.get(i) == "") {  
+//                    continue;  
+//                }  
+//                // 如果值是list类型则调用自己  
+//                if (list.get(i) instanceof List) {  
+//                    sb.append(ListToString((List<?>) list.get(i)));  
+//                    sb.append(SEP1);  
+//                } else if (list.get(i) instanceof Map) {  
+//                    sb.append(MapToString((Map<?, ?>) list.get(i)));  
+//                    sb.append(SEP1);  
+//                } else {  
+//                    sb.append(list.get(i));  
+//                    sb.append(SEP1);  
+//                }  
+//            }  
+//        }  
+//        return "L" + sb.toString();  
+//    }  
+//	  
+//	  
+//	  
+//	  public static String MapToString(Map<?, ?> map) {  
+//          StringBuffer sb = new StringBuffer();  
+//          // 遍历map  
+//          for (Object obj : map.keySet()) {  
+//              if (obj == null) {  
+//                  continue;  
+//              }  
+//              Object key = obj;  
+//              Object value = map.get(key);  
+//              if (value instanceof List<?>) {  
+//                  sb.append(key.toString() + SEP1 + ListToString((List<?>) value));  
+//                  sb.append(SEP2);  
+//              } else if (value instanceof Map<?, ?>) {  
+//                  sb.append(key.toString() + SEP1  
+//                          + MapToString((Map<?, ?>) value));  
+//                  sb.append(SEP2);  
+//              } else {  
+//                  sb.append(key.toString() + SEP3 + value.toString());  
+//                  sb.append(SEP2);  
+//              }  
+//          }  
+//          return "M" + sb.toString();  
+//      }  
+     
+	
 }
-/*public class Coupon extends ActionBarActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-
-   /* public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
-    }
-
-}*/
 
