@@ -15,14 +15,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
-
-
-
-
-
-
-public class LoaderAdapter extends BaseAdapter{
+public class LoaderAdapter extends BaseAdapter {
 
 	private static final String TAG = "LoaderAdapter";
 	private boolean mBusy = false;
@@ -31,19 +24,17 @@ public class LoaderAdapter extends BaseAdapter{
 		this.mBusy = busy;
 	}
 
-	
 	private ImageLoader mImageLoader;
 	private Context mContext;
 	private List<Map<String, String>> list;
-	
-	
-	public LoaderAdapter(Context context,List<Map<String, String>> list) {
+
+	public LoaderAdapter(Context context, List<Map<String, String>> list) {
 		this.list = list;
 		this.mContext = context;
 		mImageLoader = new ImageLoader(context);
 	}
-	
-	public ImageLoader getImageLoader(){
+
+	public ImageLoader getImageLoader() {
 		return mImageLoader;
 	}
 
@@ -79,14 +70,18 @@ public class LoaderAdapter extends BaseAdapter{
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 
-		
 		viewHolder.mImageView.setImageResource(R.drawable.ic_launcher);
-		DebugUtil.i("test....result","44444----"+list.get(position).get("img_url"));
+		DebugUtil.i("test....result",
+				"44444----" + list.get(position).get("img_url"));
 		if (!mBusy) {
-			mImageLoader.DisplayImage(MapPackage.PATH+list.get(position).get("img_url"), viewHolder.mImageView, false);
+			mImageLoader.DisplayImage(
+					MapPackage.PATH + list.get(position).get("img_url"),
+					viewHolder.mImageView, false);
 			viewHolder.mTextView.setText(list.get(position).get("goods_no"));
 		} else {
-			mImageLoader.DisplayImage(MapPackage.PATH+list.get(position).get("img_url"), viewHolder.mImageView, false);		
+			mImageLoader.DisplayImage(
+					MapPackage.PATH + list.get(position).get("img_url"),
+					viewHolder.mImageView, false);
 			viewHolder.mTextView.setText(list.get(position).get("goods_no"));
 		}
 		return convertView;
