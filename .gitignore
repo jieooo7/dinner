@@ -1,0 +1,10 @@
+*~
+.svn
+.settings
+local.properties
+proguard/**
+target/**
+bin/**
+obj/**
+doc/**
+gen/**
