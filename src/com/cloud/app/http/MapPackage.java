@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.telephony.TelephonyManager;
 
 import com.cloud.app.debug.DebugUtil;
@@ -71,6 +72,9 @@ public class MapPackage {
 //	默认为-1
 	public void setUid(Context context){
 //		从本地存储获取
+		SharedPreferences sp = context.getSharedPreferences("userInfo", context.MODE_PRIVATE);
+		this.uid=sp.getString("uid", "-1");
+		DebugUtil.i("shared","999999"+sp.getString("uid", "-1"));
 	}
 	public String getpath() {
 		Date date = new Date();

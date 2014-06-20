@@ -46,7 +46,7 @@ public class EasyFile {
 			fileContent = gson.toJson(list);
 
 			// 判断文件内容是否相等，否，则写入
-			if ((fileContent.equals(readFileStr(filePath))) != true) {
+			if ((MD5.getMD5(fileContent).equals(MD5.getMD5(readFileStr(filePath)))) != true) {
 				DebugUtil.i("file", "write file");
 				return FileHelper.writeFile(FileManager.getSaveFilePath()
 						+ "json/" + filePath, fileContent, false);
