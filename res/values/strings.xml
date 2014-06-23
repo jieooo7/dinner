@@ -4,7 +4,7 @@
     <string name="app_name">dinner</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-	<string name="label_name">优惠券</string>
+	<string name="coupon_name">优惠券</string>
     <string name="first">第一个</string>
     <string name="second">第二个</string>    
 	<string name="third">第三个</string>
