@@ -16,57 +16,59 @@ import android.os.Message;
 import android.view.Window;
 
 /**
- * com.cloud.app.dinner.Welcome
+ * 欢迎界面 com.cloud.app.dinner.Welcome
+ * 
  * @author Andrew Lee <br/>
- * create at 2014年6月23日 上午10:00:11
+ *         create at 2014年6月23日 上午10:00:11
  */
 public class WelcomeActivity extends Activity {
 	private static final String TAG = "WelcomeActivity";
-	
-	 protected void onCreate(Bundle savedInstanceState) {
-	        // TODO Auto-generated method stub
-	        super.onCreate(savedInstanceState);
-	        requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏        
-	        setContentView(R.layout.welcome);
-	        //启动线程
-	        Thread mt = new Thread(mThread);
-	        mt.start();
-	    }
-	    
 
-	    private Handler mHandler = new Handler(){
-	        
-	        @Override
-	        public void handleMessage(Message msg) {
-	            // TODO Auto-generated method stub
-	            super.handleMessage(msg);
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);// 去掉标题栏
+		setContentView(R.layout.welcome);
+		// 启动线程
+		Thread mt = new Thread(mThread);
+		mt.start();
+	}
 
-	            if((String)msg.obj == TAG) {
-	                //跳转
-	                Intent intent = new Intent();
-	                intent.setClass(WelcomeActivity.this, CouponActivity.class);
-	                WelcomeActivity.this.startActivity(intent); 
-	                finish();
-	            }
-	        }
-	    };
-	    
-	    Runnable mThread = new Runnable() {
-	        @Override
-	        public void run() {
-	            // TODO Auto-generated method stub
-	            Message msg = mHandler.obtainMessage();
-	            //延时3秒
-	            try {
-	                Thread.sleep(2000);
-	            } catch (InterruptedException e) {
-	                // TODO Auto-generated catch block
-	                e.printStackTrace();
-	            }
-	            msg.obj = TAG;
-	            mHandler.sendMessage(msg);
-	        }
-	        
-	    };
+	private Handler mHandler = new Handler() {
+
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			super.handleMessage(msg);
+
+			if ((String) msg.obj == TAG) {
+				// 跳转
+				Intent intent = new Intent();
+				intent.setClass(WelcomeActivity.this, CouponActivity.class);
+				WelcomeActivity.this.startActivity(intent);
+				finish();
+			}
+		}
+	};
+
+	Runnable mThread = new Runnable() {
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			// 从信息池获取消息,构造message 
+			Message msg = mHandler.obtainMessage();
+			// 延时2秒
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			msg.obj = TAG;
+			// 加入信息到消息队列
+			mHandler.sendMessage(msg);
+		}
+
+	};
 
 }

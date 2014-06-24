@@ -4,6 +4,20 @@
     <string name="app_name">dinner</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
+    
+    <!-- left_menu用到的文字 -->
+    <string name="setting">设置</string>
+    <string name="login_and_register">登陆/注册</string>
+    <string name="home">首页</string>
+    <string name="my_order">我的订单</string>
+    <string name="my_coupon">我的优惠券</string>
+    <string name="my_favor">我的收藏</string>
+    <string name="my_intergral">我的积分</string>
+    <string name="my_account">我的账户</string>
+    <string name="email">meishijuhui@163.com</string>
+    <!--  -->
+    
 	<string name="coupon_name">优惠券</string>
     <string name="first">第一个</string>
     <string name="second">第二个</string>    

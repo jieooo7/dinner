@@ -7,7 +7,7 @@ public class ShowDetailActivity extends Activity {
 	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.showdetail);
+		setContentView(R.layout.left_menu);
 		
 		
 		
