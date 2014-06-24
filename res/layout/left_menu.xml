@@ -2,305 +2,349 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/menu_back" >
-    
+    android:background="@color/menu_back"
+    android:orientation="vertical" >
+
     <!-- 顶部布局 -->
-    <LinearLayout 
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="117dp"
-        android:orientation="horizontal"
-        android:background="@color/menu_back_top">
+        android:background="@color/menu_back_top"
+        android:orientation="horizontal" >
+
         <!-- 个人中心图片 -->
-        <ImageView 
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="39dp"
+
+        <ImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
-            android:src="@drawable/logo"
-            />
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="39dp"
+            android:src="@drawable/logo" />
         <!-- 登录邮箱 -->
-        <LinearLayout 
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="50dp"
-            android:orientation="vertical"
-            >
-            <TextView 
+            android:orientation="vertical" >
+
+            <TextView
                 android:id="@+id/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="0dp"
-                android:textSize="18sp"
+                android:text="@string/login_and_register"
                 android:textColor="@color/white_text"
-                android:text="@string/login_and_register"/>
-            <TextView 
+                android:textSize="18sp" />
+
+            <TextView
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="4dp"
-                android:textSize="14sp"
+                android:text="@string/email"
                 android:textColor="@color/gray_text"
-                android:text="@string/email"/>
+                android:textSize="14sp" />
         </LinearLayout>
         <!-- 设置小图标 -->
-        <ImageView 
+
+        <ImageView
             android:id="@+id/set_small"
-            android:layout_marginLeft="55dp"
-            android:layout_marginTop="60dp"
-            android:src="@drawable/seting_small"
             android:layout_width="17dp"
             android:layout_height="17dp"
-            />
-        
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/seting_small" />
     </LinearLayout>
     <!-- 首页项 -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="vertical">
-        <LinearLayout 
+        android:orientation="vertical" >
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="34dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-            <ImageView 
+            android:orientation="horizontal" >
+
+            <ImageView
                 android:layout_width="19dp"
                 android:layout_height="21dp"
-                android:src="@drawable/user"/>
-            <TextView 
-                android:textSize="15sp"
+                android:src="@drawable/user" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white_text"
-                android:text="@string/home"
-                android:layout_marginLeft="44dp"
                 android:layout_gravity="center_vertical"
-                />
+                android:layout_marginLeft="44dp"
+                android:text="@string/home"
+                android:textColor="@color/white_text"
+                android:textSize="15sp" />
         </LinearLayout>
         <!-- 线条 -->
-    <TextView 
-        android:layout_height="2dp"
-        android:layout_width="match_parent"
-        android:background="@color/menu_back_line"
-        android:layout_marginTop="13dp"/>    
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="13dp"
+            android:background="@color/menu_back_line" />
     </LinearLayout>
     <!-- 我的订单选项 -->
-	 <LinearLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="vertical">
+        android:orientation="vertical" >
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="34dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-            <ImageView 
+            android:orientation="horizontal" >
+
+            <ImageView
                 android:layout_width="19dp"
                 android:layout_height="21dp"
-                android:src="@drawable/order"/>
-            <TextView 
-                android:textSize="15sp"
+                android:src="@drawable/order" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="@color/white_text"
+                android:layout_marginLeft="44dp"
                 android:text="@string/my_order"
-                />
-            <TextView 
+                android:textColor="@color/white_text"
+                android:textSize="15sp" />
+
+            <TextView
                 android:layout_width="23dp"
                 android:layout_height="23dp"
-                android:textColor="@color/num_text"
-                android:background="@color/num_back"
-                android:textSize="15sp"
                 android:layout_marginLeft="110dp"
+                android:background="@color/num_back"
                 android:gravity="center"
                 android:text="3"
-                />
+                android:textColor="@color/num_text"
+                android:textSize="15sp" />
         </LinearLayout>
         <!-- 线条 -->
-    <TextView 
-        android:layout_height="2dp"
-        android:layout_width="match_parent"
-        android:background="@color/menu_back_line"
-        android:layout_marginTop="13dp"/>     
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="13dp"
+            android:background="@color/menu_back_line" />
     </LinearLayout>
     <!-- 我的收藏选项 -->
-		 <LinearLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="vertical">
-        <LinearLayout 
+        android:orientation="vertical" >
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="34dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-            <ImageView 
+            android:orientation="horizontal" >
+
+            <ImageView
                 android:layout_width="19dp"
                 android:layout_height="21dp"
-                android:src="@drawable/collect"/>
-            <TextView 
-                android:textSize="15sp"
+                android:src="@drawable/collect" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="@color/white_text"
+                android:layout_marginLeft="44dp"
                 android:text="@string/my_favor"
-                />
-            <TextView 
+                android:textColor="@color/white_text"
+                android:textSize="15sp" />
+
+            <TextView
                 android:layout_width="23dp"
                 android:layout_height="23dp"
-                android:textColor="@color/num_text"
-                android:background="@color/num_back"
-                android:textSize="15sp"
                 android:layout_marginLeft="110dp"
+                android:background="@color/num_back"
                 android:gravity="center"
                 android:text="34"
-                />
+                android:textColor="@color/num_text"
+                android:textSize="15sp" />
         </LinearLayout>
         <!-- 线条 -->
-        <TextView 
-        android:layout_height="2dp"
-        android:layout_width="match_parent"
-        android:background="@color/menu_back_line"
-        android:layout_marginTop="13dp"/>      
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="13dp"
+            android:background="@color/menu_back_line" />
     </LinearLayout>
-        <!-- 我的优惠券选项 -->
-		 <LinearLayout
+    <!-- 我的优惠券选项 -->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="vertical">
-        <LinearLayout 
+        android:orientation="vertical" >
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="34dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-            <ImageView 
+            android:orientation="horizontal" >
+
+            <ImageView
                 android:layout_width="19dp"
                 android:layout_height="21dp"
-                android:src="@drawable/coupon"/>
-            <TextView 
-                android:textSize="15sp"
+                android:src="@drawable/coupon" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="@color/white_text"
+                android:layout_marginLeft="44dp"
                 android:text="@string/my_coupon"
-                />
-            <TextView 
+                android:textColor="@color/white_text"
+                android:textSize="15sp" />
+
+            <TextView
                 android:layout_width="23dp"
                 android:layout_height="23dp"
-                android:textColor="@color/num_text"
-                android:background="@color/num_back"
-                android:textSize="15sp"
                 android:layout_marginLeft="95dp"
+                android:background="@color/num_back"
                 android:gravity="center"
                 android:text="34"
-                />
+                android:textColor="@color/num_text"
+                android:textSize="15sp" />
         </LinearLayout>
         <!-- 线条 -->
-        <TextView 
-        android:layout_height="2dp"
-        android:layout_width="match_parent"
-        android:background="@color/menu_back_line"
-        android:layout_marginTop="13dp"/>      
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="13dp"
+            android:background="@color/menu_back_line" />
     </LinearLayout>
-        <LinearLayout
+    <!-- 我的积分选项 -->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="vertical">
-        <LinearLayout 
+        android:orientation="vertical" >
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView 
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <ImageView
                 android:layout_width="19dp"
                 android:layout_height="21dp"
-                android:layout_marginLeft="33dp"
-                android:src="@drawable/credits"/>
-            <TextView 
-                android:textSize="15sp"
+                android:src="@drawable/credits" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white_text"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="44dp"
                 android:text="@string/my_intergral"
-                android:layout_marginLeft="65dp"
-                />
+                android:textColor="@color/white_text"
+                android:textSize="15sp" />
         </LinearLayout>
-    <TextView 
-        android:layout_height="2dp"
-        android:layout_width="match_parent"
-        android:background="@color/menu_back_line"
-        android:layout_marginBottom="0dp"/>    
+        <!-- 线条 -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="13dp"
+            android:background="@color/menu_back_line" />
     </LinearLayout>
-        <LinearLayout
+    <!-- 我的账户选项 -->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="vertical">
-        <LinearLayout 
+        android:orientation="vertical" >
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView 
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <ImageView
                 android:layout_width="19dp"
                 android:layout_height="21dp"
-                android:layout_marginLeft="33dp"
-                android:src="@drawable/account"/>
-            <TextView 
-                android:textSize="15sp"
+                android:src="@drawable/account" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white_text"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="44dp"
                 android:text="@string/my_account"
-                android:layout_marginLeft="65dp"
-                />
+                android:textColor="@color/white_text"
+                android:textSize="15sp" />
         </LinearLayout>
-    <TextView 
-        android:layout_height="2dp"
-        android:layout_width="match_parent"
-        android:background="@color/menu_back_line"
-        android:layout_marginBottom="0dp"/>    
+        <!-- 线条 -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="13dp"
+            android:background="@color/menu_back_line" />
     </LinearLayout>
-        <LinearLayout
+    <!-- 底部设置选项 -->
+
+    <LinearLayout
+        android:layout_marginTop="35dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="0dp"
-        android:orientation="vertical">
-    
-         <TextView 
-        android:layout_height="2dp"
-        android:layout_width="match_parent"
-        android:background="@color/menu_back_line"
-        android:layout_marginTop="0dp"
-        />  
-        <LinearLayout 
+        android:orientation="vertical" >
+
+        <!-- 线条 -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="13dp"
+            android:background="@color/menu_back_line" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView 
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <ImageView
                 android:layout_width="19dp"
                 android:layout_height="21dp"
-                android:layout_marginLeft="33dp"
-                android:src="@drawable/seting_big"/>
-            <TextView 
-                android:textSize="15sp"
+                android:src="@drawable/seting_big" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white_text"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="44dp"
                 android:text="@string/setting"
-                android:layout_marginLeft="65dp"
-                />
+                android:textColor="@color/white_text"
+                android:textSize="15sp" />
         </LinearLayout>
-  
     </LinearLayout>
+
+    
+
 </LinearLayout>
