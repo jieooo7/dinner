@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="117dp"
+        android:layout_height="100dp"
         android:background="@color/menu_back_top"
         android:orientation="horizontal" >
 
@@ -19,7 +19,7 @@
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="39dp"
+            android:layout_marginTop="22dp"
             android:src="@drawable/logo" />
         <!-- 登录邮箱 -->
 
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="33dp"
             android:orientation="vertical" >
 
             <TextView
@@ -57,7 +57,7 @@
             android:layout_width="17dp"
             android:layout_height="17dp"
             android:layout_marginLeft="55dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="47dp"
             android:src="@drawable/seting_small" />
     </LinearLayout>
     <!-- 首页项 -->
@@ -309,9 +309,10 @@
     <!-- 底部设置选项 -->
 
     <LinearLayout
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="52dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_gravity="bottom"
         android:orientation="vertical" >
 
         <!-- 线条 -->
