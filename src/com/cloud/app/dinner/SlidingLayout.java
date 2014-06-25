@@ -8,6 +8,8 @@
  */
 package com.cloud.app.dinner;
 
+import com.cloud.app.utils.DensityUtil;
+
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.AttributeSet;
@@ -50,9 +52,9 @@ public class SlidingLayout extends LinearLayout implements OnTouchListener {
 	private int rightEdge = 0;
 
 	/**
-	 * 左侧布局完全显示时，留给右侧布局的宽度值。
+	 * 左侧布局完全显示时，留给右侧布局的宽度值,用dp转换成px。
 	 */
-	private int leftLayoutPadding = 80;
+	private int leftLayoutPadding = DensityUtil.dip2px(getContext(), 53.3f);
 
 	/**
 	 * 记录手指按下时的横坐标。

@@ -13,6 +13,7 @@
         android:background="@color/red_title" >
 
         <ImageView
+            android:id="@+id/left_button"
             android:layout_width="19dp"
             android:layout_height="21dp"
             android:layout_marginLeft="18dp"
@@ -63,9 +64,35 @@
     <!-- tabhost布局 -->
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/right_title" >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/right_title"
+        android:orientation="vertical" >
+        <TabHost 
+            android:id="@android:id/tabhost"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" >
+            </TabWidget>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 >
+                 <ListView 
+                     android:id="@+id/list"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content">
+                     
+                 </ListView>
+            </FrameLayout>
+            
+        </TabHost>
     </LinearLayout>
 
     <!-- 底部按钮 -->

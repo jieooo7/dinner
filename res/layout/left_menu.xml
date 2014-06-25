@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+<LinearLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/menu_back"
@@ -7,23 +11,26 @@
 
     <!-- 顶部布局 -->
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/menu_back_top"
-        android:orientation="horizontal" >
+         >
 
         <!-- 个人中心图片 -->
 
         <ImageView
+            android:id="@+id/left_menu_user"
             android:layout_width="62dp"
             android:layout_height="62dp"
-            android:layout_marginLeft="24dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="22dp"
             android:src="@drawable/logo" />
         <!-- 登录邮箱 -->
 
         <LinearLayout
+            android:id="@+id/left_menu_l0"
+            android:layout_toRightOf="@id/left_menu_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -44,6 +51,7 @@
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ems="9"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="4dp"
                 android:text="@string/email"
@@ -54,12 +62,13 @@
 
         <ImageView
             android:id="@+id/set_small"
+            android:layout_alignParentRight="true"
             android:layout_width="17dp"
             android:layout_height="17dp"
-            android:layout_marginLeft="55dp"
-            android:layout_marginTop="47dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
             android:src="@drawable/seting_small" />
-    </LinearLayout>
+    </RelativeLayout>
     <!-- 首页项 -->
 
     <LinearLayout
@@ -70,7 +79,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="34dp"
+            android:layout_marginLeft="26dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal" >
 
@@ -83,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="44dp"
+                android:layout_marginLeft="10dp"
                 android:text="@string/home"
                 android:textColor="@color/white_text"
                 android:textSize="15sp" />
@@ -103,14 +112,15 @@
         android:layout_height="50dp"
         android:orientation="vertical" >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="34dp"
+            android:layout_marginLeft="26dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
+            >
 
             <ImageView
+                android:id="@+id/left_menu_orderimg"
                 android:layout_width="19dp"
                 android:layout_height="21dp"
                 android:src="@drawable/order" />
@@ -118,22 +128,27 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="44dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/left_menu_orderimg"
+                android:layout_marginLeft="10dp"
                 android:text="@string/my_order"
                 android:textColor="@color/white_text"
                 android:textSize="15sp" />
 
             <TextView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_marginLeft="110dp"
-                android:background="@color/num_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/corner_style"
                 android:gravity="center"
-                android:text="3"
+                android:minWidth="25sp"
+                android:text="4"
                 android:textColor="@color/num_text"
                 android:textSize="15sp" />
-        </LinearLayout>
+            
+
+        </RelativeLayout>
         <!-- 线条 -->
 
         <TextView
@@ -149,37 +164,44 @@
         android:layout_height="50dp"
         android:orientation="vertical" >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="34dp"
+            android:layout_marginLeft="26dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
+             >
 
             <ImageView
+                android:id="@+id/left_menu_collectimg"
                 android:layout_width="19dp"
                 android:layout_height="21dp"
                 android:src="@drawable/collect" />
 
             <TextView
+                android:layout_toRightOf="@id/left_menu_collectimg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="44dp"
+                android:layout_marginLeft="10dp"
                 android:text="@string/my_favor"
                 android:textColor="@color/white_text"
                 android:textSize="15sp" />
 
             <TextView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_marginLeft="110dp"
-                android:background="@color/num_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/corner_style"
                 android:gravity="center"
+                android:minWidth="25sp"
                 android:text="34"
                 android:textColor="@color/num_text"
                 android:textSize="15sp" />
-        </LinearLayout>
+
+        </RelativeLayout>
         <!-- 线条 -->
 
         <TextView
@@ -195,37 +217,42 @@
         android:layout_height="50dp"
         android:orientation="vertical" >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="34dp"
+            android:layout_marginLeft="26dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
+            >
 
             <ImageView
+                android:id="@+id/left_menu_couponimg"
                 android:layout_width="19dp"
                 android:layout_height="21dp"
                 android:src="@drawable/coupon" />
 
             <TextView
+                android:layout_toRightOf="@id/left_menu_couponimg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="44dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:text="@string/my_coupon"
                 android:textColor="@color/white_text"
                 android:textSize="15sp" />
 
             <TextView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:layout_marginLeft="95dp"
-                android:background="@color/num_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:minWidth="25sp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/corner_style"
                 android:gravity="center"
-                android:text="34"
+                android:text="134"
                 android:textColor="@color/num_text"
                 android:textSize="15sp" />
-        </LinearLayout>
+        </RelativeLayout>
         <!-- 线条 -->
 
         <TextView
@@ -241,27 +268,41 @@
         android:layout_height="50dp"
         android:orientation="vertical" >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="34dp"
+            android:layout_marginLeft="26dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
+            >
 
             <ImageView
+                android:id="@+id/left_menu_creditsimg"
                 android:layout_width="19dp"
                 android:layout_height="21dp"
                 android:src="@drawable/credits" />
 
             <TextView
+                android:layout_toRightOf="@id/left_menu_creditsimg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="44dp"
+                android:layout_marginLeft="10dp"
                 android:text="@string/my_intergral"
                 android:textColor="@color/white_text"
                 android:textSize="15sp" />
-        </LinearLayout>
+             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:minWidth="25sp"
+                android:background="@drawable/corner_style"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="134"
+                android:textColor="@color/num_text"
+                android:textSize="15sp" />
+        </RelativeLayout>
         <!-- 线条 -->
 
         <TextView
@@ -277,27 +318,41 @@
         android:layout_height="50dp"
         android:orientation="vertical" >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="34dp"
+            android:layout_marginLeft="26dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal" >
+             >
 
             <ImageView
+                android:id="@+id/left_menu_accountimg"
                 android:layout_width="19dp"
                 android:layout_height="21dp"
                 android:src="@drawable/account" />
 
             <TextView
+                android:layout_toRightOf="@id/left_menu_accountimg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="44dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:text="@string/my_account"
                 android:textColor="@color/white_text"
                 android:textSize="15sp" />
-        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:minWidth="25sp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/corner_style"
+                android:gravity="center"
+                android:text="1340"
+                android:textColor="@color/num_text"
+                android:textSize="15sp" />
+        </RelativeLayout>
         <!-- 线条 -->
 
         <TextView
@@ -306,11 +361,13 @@
             android:layout_marginTop="13dp"
             android:background="@color/menu_back_line" />
     </LinearLayout>
+    </LinearLayout>
     <!-- 底部设置选项 -->
 
     <LinearLayout
         android:layout_marginTop="52dp"
         android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
         android:layout_height="50dp"
         android:layout_gravity="bottom"
         android:orientation="vertical" >
@@ -326,7 +383,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="34dp"
+            android:layout_marginLeft="26dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal" >
 
@@ -339,7 +396,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="44dp"
+                android:layout_marginLeft="10dp"
                 android:text="@string/setting"
                 android:textColor="@color/white_text"
                 android:textSize="15sp" />
@@ -348,4 +405,5 @@
 
     
 
-</LinearLayout>
+
+</RelativeLayout>

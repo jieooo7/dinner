@@ -44,7 +44,7 @@ public class WelcomeActivity extends Activity {
 			if ((String) msg.obj == TAG) {
 				// Ìø×ª
 				Intent intent = new Intent();
-				intent.setClass(WelcomeActivity.this, CouponActivity.class);
+				intent.setClass(WelcomeActivity.this, MainActivity.class);
 				WelcomeActivity.this.startActivity(intent);
 				finish();
 			}
