@@ -1,44 +1,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="horizontal"
-    tools:context=".MainActivity" >
+    >
 
-   		 <!-- 设置activity的name 不会被打包进APK。只是ADT的Layout Editor
-    	在你当前的Layout文件里面设置对应的渲染上下文，说明你当前的Layout所在的渲染上下文
-    	是activity name对应的那个activity -->
+   	
+<!-- behind为左侧菜单 -->
+  <com.jeremyfeinstein.slidingmenu.lib.SlidingMenu
+    xmlns:sliding="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/slidingmenulayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    sliding:viewAbove="@layout/right_content"
+    sliding:viewBehind="@layout/left_menu"
+    sliding:touchModeAbove="margin"
+    sliding:behindOffset="@dimen/slide"
+    sliding:selectorEnabled="true"
+    sliding:fadeEnabled="false" />
 
 
-    <!-- 使用自定义的侧滑布局，orientation必须为水平方向 -->
-
-    <com.cloud.app.dinner.SlidingLayout
-        android:id="@+id/slidingLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="horizontal" >
-
-        <!--
-	        侧滑布局的根节点下，有且只能有两个子元素,这两个子元素必须是四种基本布局之一,
-	        即LinearLayout, RelativeLayout, FrameLayout或TableLayout。
-	        第一个子元素将做为左侧布局，初始化后被隐藏。第二个子元素将做为右侧布局，
-	        也就是当前Activity的主布局，将主要的数据放在里面。  -->
-
-        <RelativeLayout
-            android:id="@+id/menu"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            >
-            <include layout="@layout/left_menu"/>
-        </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/content"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical" >
-            <include layout="@layout/right_content"/>
-        </LinearLayout>
-    </com.cloud.app.dinner.SlidingLayout>
+    
 
 </LinearLayout>

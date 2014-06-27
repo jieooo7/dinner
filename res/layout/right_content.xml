@@ -61,114 +61,89 @@
         android:hint="@string/search_hint"
         android:textSize="15sp"
         android:visibility="gone" />
-    <!-- tabhost布局 -->
-
-    <LinearLayout
+    <!-- radiogroup 布局 -->
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/right_title"
         android:orientation="vertical" >
-        <TabHost 
-            android:id="@+id/tabhost"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone">
-            </TabWidget>
-            
-            <RadioGroup 
-                android:id="@+id/radiogroup"
-                android:layout_width="fill_parent"
-                android:layout_height="51dp"
-                android:background="@color/tab_unselect"
-                android:orientation="horizontal">
-                
-                <RadioButton
-                    android:id="@+id/taB_coupon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_color"
-                    android:text="@string/coupon_info"
-                    android:background="@drawable/tab_select"
-                    android:button="@null"
-                    android:checked="true" />
-                <RadioButton
-                    android:id="@+id/tab_dishs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_color"
-                    android:text="@string/dish_recommend"
-                    android:background="@drawable/tab_select"
-                    android:button="@null"
-                     />
-                <RadioButton
-                    android:id="@+id/tab_res"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_color"
-                    android:text="@string/res_recommend"
-                    android:background="@drawable/tab_select"
-                    android:button="@null"
-                     />
-            </RadioGroup>
-            
-            
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                 >
-                 <LinearLayout 
-                     android:id="@+id/onetab"
-                     android:layout_width="match_parent"
-                     android:layout_height="match_parent"
-                     android:orientation="vertical">
-                     <ListView 
-                         android:layout_width="match_parent"
-                         android:layout_height="match_parent">
-                         
-                     </ListView>
-                     
-                 </LinearLayout>
-                 <LinearLayout 
-                     android:id="@+id/twotab"
-                     android:layout_width="match_parent"
-                     android:layout_height="match_parent"
-                     android:orientation="vertical">
-                     <ListView 
-                         android:layout_width="match_parent"
-                         android:layout_height="match_parent">
-                         
-                     </ListView>
-                     
-                 </LinearLayout>
-                 <LinearLayout 
-                     android:id="@+id/threetab"
-                     android:layout_width="match_parent"
-                     android:layout_height="match_parent"
-                     android:orientation="vertical">
-                     <ListView 
-                         android:layout_width="match_parent"
-                         android:layout_height="match_parent">
-                         
-                     </ListView>
-                     
-                 </LinearLayout>
-            </FrameLayout>
-            
-        </TabHost>
-    </LinearLayout>
+	<TabHost
+    
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <TabWidget
+        android:id="@android:id/tabs"
 
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="fill_parent"
+            android:layout_height="51dp"
+            android:background="@color/tab_unselect"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/tab_coupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/tab_select"
+                android:button="@null"
+                android:checked="true"
+                android:text="@string/coupon_info"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/tab_dishs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/tab_select"
+                android:button="@null"
+                android:text="@string/dish_recommend"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/tab_res"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/tab_select"
+                android:button="@null"
+                android:text="@string/res_recommend"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+        </RadioGroup>
+         <FrameLayout
+        android:id="@android:id/tabcontent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0"/>
+
+        <LinearLayout
+            android:id="@+id/onetab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+			<FrameLayout 
+			    android:id="@+id/realcontent"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    >
+			    
+			</FrameLayout>
+        </LinearLayout>
+    
+    </TabHost>
+    </LinearLayout>
     <!-- 底部按钮 -->
 
     <Button

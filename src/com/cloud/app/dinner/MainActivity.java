@@ -3,94 +3,43 @@
  * classes : com.cloud.app.dinner.MainActivity
  * author Andrew Lee
  * V 1.0.0
- * Create at 2014Äê6ÔÂ25ÈÕ ÉÏÎç9:27:36
+ * Create at 2014ï¿½ï¿½6ï¿½ï¿½25ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½9:27:36
  * Copyright: 2014 Interstellar Cloud Inc. All rights reserved.
  */
 package com.cloud.app.dinner;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
 import android.app.Activity;
-import android.app.LocalActivityManager;
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTabHost;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageView;
-import android.widget.TabHost;
-import android.widget.TabHost.TabSpec;
+import android.widget.RadioGroup;
 
 /**
  * com.cloud.app.dinner.MainActivity
  * 
  * @author Andrew Lee <br/>
- *         create at 2014Äê6ÔÂ25ÈÕ ÉÏÎç9:27:36
+ *         create at 2014ï¿½ï¿½6ï¿½ï¿½25ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½9:27:36
  */
 public class MainActivity extends Activity {
 	private static final String TAG = "MainActivity";
-	private TabHost tabHost;
-	private TabSpec tabSpec;
 
 	/**
-	 * menu°´Å¥£¬µã»÷°´Å¥Õ¹Ê¾×ó²à²¼¾Ö£¬ÔÙµã»÷Ò»´ÎÒþ²Ø×ó²à²¼¾Ö¡£
+	 * menuï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥Õ¹Ê¾ï¿½ï¿½à²¼ï¿½Ö£ï¿½ï¿½Ùµï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à²¼ï¿½Ö¡ï¿½
 	 */
-	private ImageView menuButton;
 	/**
-	 * ²à»¬²¼¾Ö¶ÔÏó£¬ÓÃÓÚÍ¨¹ýÊÖÖ¸»¬¶¯½«×ó²àµÄ²Ëµ¥²¼¾Ö½øÐÐÏÔÊ¾»òÒþ²Ø¡£
+	 * ï¿½à»¬ï¿½ï¿½ï¿½Ö¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²Ëµï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ø¡ï¿½
 	 */
-	private SlidingLayout slidingLayout;
-	private View mView;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);// È¥µô±êÌâÀ¸
+		requestWindowFeature(Window.FEATURE_NO_TITLE);// È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		setContentView(R.layout.main);
-		
-
-		tabHost = (TabHost) findViewById(R.id.tabhost);
-		tabHost.setup();
-
-		tabSpec = tabHost
-				.newTabSpec("one")
-				.setIndicator("one")
-					
-				.setContent(R.id.onetab);
-//						getResources().getDrawable(
-//								R.drawable.tab_selector_coupon))
-		tabHost.addTab(tabSpec);
-
-		tabSpec = tabHost
-				.newTabSpec("two")
-				.setIndicator("one")
-				.setContent(R.id.twotab);
-		tabHost.addTab(tabSpec);
-
-		tabSpec = tabHost
-				.newTabSpec("three")
-				.setIndicator("one")
-				.setContent(R.id.threetab);
-		tabHost.addTab(tabSpec);
-		
-		
-		
-		 tabHost.setCurrentTab(0);
-
-		slidingLayout = (SlidingLayout) findViewById(R.id.slidingLayout);
-		menuButton = (ImageView) findViewById(R.id.left_button);
-		mView = (View) findViewById(R.id.content);
-		// // ½«¼àÌý»¬¶¯ÊÂ¼þ°ó¶¨ÔÚcontentListViewÉÏ
-		slidingLayout.setScrollEvent(mView);
-		menuButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// ÊµÏÖµã»÷Ò»ÏÂmenuÕ¹Ê¾×ó²à²¼¾Ö£¬ÔÙµã»÷Ò»ÏÂÒþ²Ø×ó²à²¼¾ÖµÄ¹¦ÄÜ
-				if (slidingLayout.isLeftLayoutVisible()) {
-					slidingLayout.scrollToRightLayout();
-				} else {
-					slidingLayout.scrollToLeftLayout();
-				}
-			}
-		});
-
+		SlidingMenu menu = new SlidingMenu(this);
+		menu.setMode(SlidingMenu.LEFT);
 	}
 
 }
