@@ -43,6 +43,7 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/right_search_button"
             android:layout_width="19dp"
             android:layout_height="21dp"
             android:layout_alignParentRight="true"
@@ -54,6 +55,7 @@
     <!-- 搜索框布局，默认不显示 -->
 
     <EditText
+        android:id="@+id/right_search_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/right_title"
@@ -61,90 +63,55 @@
         android:hint="@string/search_hint"
         android:textSize="15sp"
         android:visibility="gone" />
-    <!-- radiogroup 布局 -->
-        <LinearLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/right_title"
+        android:layout_below="@id/right_search_edit"
         android:orientation="vertical" >
-	<TabHost
-    
-    android:id="@android:id/tabhost"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-        <TabWidget
-        android:id="@android:id/tabs"
 
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"/>
-
-
-        <RadioGroup
-            android:id="@+id/radiogroup"
-            android:layout_width="fill_parent"
-            android:layout_height="51dp"
-            android:background="@color/tab_unselect"
-            android:orientation="horizontal" >
-
-            <RadioButton
-                android:id="@+id/tab_coupon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/tab_select"
-                android:button="@null"
-                android:checked="true"
-                android:text="@string/coupon_info"
-                android:textColor="@color/text_color"
-                android:textSize="14sp" />
-
-            <RadioButton
-                android:id="@+id/tab_dishs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/tab_select"
-                android:button="@null"
-                android:text="@string/dish_recommend"
-                android:textColor="@color/text_color"
-                android:textSize="14sp" />
-
-            <RadioButton
-                android:id="@+id/tab_res"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/tab_select"
-                android:button="@null"
-                android:text="@string/res_recommend"
-                android:textColor="@color/text_color"
-                android:textSize="14sp" />
-        </RadioGroup>
-         <FrameLayout
-        android:id="@android:id/tabcontent"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="0"/>
-
-        <LinearLayout
-            android:id="@+id/onetab"
+        <android.support.v4.app.FragmentTabHost
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@android:id/tabhost"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-			<FrameLayout 
-			    android:id="@+id/realcontent"
-			    android:layout_width="match_parent"
-			    android:layout_height="match_parent"
-			    >
-			    
-			</FrameLayout>
-        </LinearLayout>
-    
-    </TabHost>
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:orientation="horizontal" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0" />
+
+                <FrameLayout
+                    android:id="@+id/realcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                
+                
+            </LinearLayout>
+        </android.support.v4.app.FragmentTabHost>
     </LinearLayout>
     <!-- 底部按钮 -->
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true">
+        <include layout="@layout/sort"/>
+    </LinearLayout>
 
     <Button
         android:layout_width="78dp"

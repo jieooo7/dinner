@@ -3,7 +3,7 @@
  * classes : com.cloud.app.fragment.FragmentRes
  * author Andrew Lee
  * V 1.0.0
- * Create at 2014Äê6ÔÂ27ÈÕ ÉÏÎç11:19:59
+ * Create at 2014ï¿½ï¿½6ï¿½ï¿½27ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½11:19:59
  * Copyright: 2014 Interstellar Cloud Inc. All rights reserved.
  */
 package com.cloud.app.fragment;
@@ -18,16 +18,14 @@ import com.cloud.app.dinner.R;
 /**
  * com.cloud.app.fragment.FragmentRes
  * @author Andrew Lee <br/>
- * create at 2014Äê6ÔÂ27ÈÕ ÉÏÎç11:19:59
+ * create at 2014ï¿½ï¿½6ï¿½ï¿½27ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½11:19:59
  */
 public class FragmentRes {
 	private static final String TAG = "FragmentRes";
 	 public View onCreateView(LayoutInflater inflater, ViewGroup container,
 		        Bundle savedInstanceState) {
 		        // Inflate the layout for this fragment
-		        View V = inflater.inflate(R.layout.fragment_res, container, false);
-
-		        return V;
+		 return inflater.inflate(R.layout.fragment_res, container, false);
 	
 }
 }

@@ -3,7 +3,7 @@
  * classes : com.cloud.app.fragment.FragmentDish
  * author Andrew Lee
  * V 1.0.0
- * Create at 2014Äê6ÔÂ27ÈÕ ÉÏÎç11:18:55
+ * Create at 2014ï¿½ï¿½6ï¿½ï¿½27ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½11:18:55
  * Copyright: 2014 Interstellar Cloud Inc. All rights reserved.
  */
 package com.cloud.app.fragment;
@@ -18,16 +18,14 @@ import com.cloud.app.dinner.R;
 /**
  * com.cloud.app.fragment.FragmentDish
  * @author Andrew Lee <br/>
- * create at 2014Äê6ÔÂ27ÈÕ ÉÏÎç11:18:55
+ * create at 2014ï¿½ï¿½6ï¿½ï¿½27ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½11:18:55
  */
 public class FragmentDish {
 	private static final String TAG = "FragmentDish";
 	 public View onCreateView(LayoutInflater inflater, ViewGroup container,
 		        Bundle savedInstanceState) {
 		        // Inflate the layout for this fragment
-		        View V = inflater.inflate(R.layout.fragment_dish, container, false);
+		 return inflater.inflate(R.layout.fragment_dish, container, false);
 
-		        return V;
-	
 }
 }

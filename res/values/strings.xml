@@ -26,7 +26,11 @@
     <string name="res_recommend">餐厅推荐</string>
     <string name="search_hint">请输入菜品/餐厅/区域进行搜索</string>
         
-    
+    <!-- 人气 最新 价格 销量 -->
+    <string name="sort1">人气</string>
+    <string name="sort2">最新</string>
+    <string name="sort3">价格</string>
+    <string name="sort4">销量</string>
     
     
     
