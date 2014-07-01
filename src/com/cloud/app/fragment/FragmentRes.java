@@ -10,6 +10,7 @@ package com.cloud.app.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -20,7 +21,7 @@ import com.cloud.app.dinner.R;
  * @author Andrew Lee <br/>
  * create at 2014��6��27�� ����11:19:59
  */
-public class FragmentRes {
+public class FragmentRes extends Fragment {
 	private static final String TAG = "FragmentRes";
 	 public View onCreateView(LayoutInflater inflater, ViewGroup container,
 		        Bundle savedInstanceState) {

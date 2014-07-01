@@ -15,6 +15,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**
+ * com.cloud.app.dinner.LoaderAdapter
+ * @author Andrew Lee <br/>
+ * create at 2014年7月1日 下午3:47:42
+ */
 public class LoaderAdapter extends BaseAdapter {
 
 	private static final String TAG = "LoaderAdapter";

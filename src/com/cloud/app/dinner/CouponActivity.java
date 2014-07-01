@@ -41,10 +41,10 @@ public class CouponActivity extends Activity {
 		mp.setRes("start", "1");
 		mp.setRes("count", "3");
 		try {
-			// 此处引发异常
+			// 锟剿达拷锟斤拷锟斤拷锟届常
 			mp.send();
 			this.list = mp.getBackResult();
-			// 将list写入本地
+			// 锟斤拷list写锟诫本锟斤拷
 			this.bs = EasyFile.writeFile("test", this.list);
 			DebugUtil.i("test....path", mp.getpath());
 			DebugUtil.i("test....head",
@@ -57,10 +57,10 @@ public class CouponActivity extends Activity {
 					+ mp.getBackResult().get(1).get("img_url"));
 		} catch (Exception e) {
 			if (HttpSendRecv.netStat)
-				Toast.makeText(getApplicationContext(), "网络异常，请重试",
+				Toast.makeText(getApplicationContext(), "缃戠粶閿欒锛岃閲嶈瘯",
 						Toast.LENGTH_LONG).show();
 			else
-				Toast.makeText(getApplicationContext(), "网络异常，请重试！！！！",
+				Toast.makeText(getApplicationContext(), "鍑洪敊浜哵_^",
 						Toast.LENGTH_LONG).show();
 
 			this.list = EasyFile.readFile("test");

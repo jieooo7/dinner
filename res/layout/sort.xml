@@ -3,6 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical" 
+    android:visibility="gone"
     >
     <RadioGroup
                 android:id="@+id/radiogroup"
@@ -13,7 +14,6 @@
         android:layout_width="50dp"
         android:layout_height="45dp"
         android:layout_weight="1"
-        android:checked="true"
         android:background="@drawable/sort_select"
         android:button="@null"
         android:gravity="center"

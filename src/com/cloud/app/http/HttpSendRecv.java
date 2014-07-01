@@ -3,7 +3,7 @@
  * classes : com.cloud.app.http.HttpSendRecv
  * author Andrew Lee
  * V 1.0.0
- * Create at 2014Äê6ÔÂ6ÈÕ ÉÏÎç11:20:25
+ * Create at 2014ï¿½ï¿½6ï¿½ï¿½6ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½11:20:25
  * Copyright: 2014 Interstellar Cloud Inc. All rights reserved.
  */
 package com.cloud.app.http;
@@ -27,19 +27,17 @@ import android.os.AsyncTask;
 
 
 
-
 /**
- * Òì²½ http ÇëÇó½ÓÊÕ
  * com.cloud.app.http.HttpSendRecv
  * @author Andrew Lee <br/>
- * create at 2014Äê6ÔÂ6ÈÕ ÉÏÎç11:20:25
+ * create at 2014å¹´7æœˆ1æ—¥ ä¸‹åˆ3:55:05
  */
 public class HttpSendRecv extends AsyncTask<Void, Void, String>{
 	private static final String TAG = "HttpSendRecv";
 	public static boolean netStat=false;
 	private String path;
 	private String st;
-//	¹¹½¨º¯Êı£¬´«µİ²ÎÊı
+//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ²ï¿½ï¿½ï¿½
 	public HttpSendRecv(String path,String st){
 		this.path=path;
 		this.st=st;
@@ -47,7 +45,7 @@ public class HttpSendRecv extends AsyncTask<Void, Void, String>{
 	
 
     /** 
-     *·¢ËÍ PostÇëÇó 
+     *ï¿½ï¿½ï¿½ï¿½ Postï¿½ï¿½ï¿½ï¿½ 
      * @throws IOException 
      * @throws ClientProtocolException 
      */  
@@ -61,14 +59,14 @@ public class HttpSendRecv extends AsyncTask<Void, Void, String>{
 			 
 		         
 		      StringEntity se = new StringEntity(st);
-	          /* Ìí¼ÓÇëÇó²ÎÊıµ½ÇëÇó¶ÔÏó*/  
+	          /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/  
 	          httpRequest.setEntity(se); ;  
-	          /*·¢ËÍÇëÇó²¢µÈ´ıÏìÓ¦*/  
+	          /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó²¢µÈ´ï¿½ï¿½ï¿½Ó¦*/  
 	          HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequest);  
-	          /*Èô×´Ì¬ÂëÎª200 ok*/  
+	          /*ï¿½ï¿½×´Ì¬ï¿½ï¿½Îª200 ok*/  
 	          if(httpResponse.getStatusLine().getStatusCode() == 200)   
 	          {  
-	            /*¶Á·µ»ØÊı¾İ*/  
+	            /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/  
 	             strResult = EntityUtils.toString(httpResponse.getEntity());  
 	             
 	          }  
@@ -96,7 +94,7 @@ public class HttpSendRecv extends AsyncTask<Void, Void, String>{
 	}
 	
 	/* 
-	 * ºóÌ¨Ïß³ÌÖ´ĞĞµÄ·½·¨
+	 * ï¿½ï¿½Ì¨ï¿½ß³ï¿½Ö´ï¿½ĞµÄ·ï¿½ï¿½ï¿½
 	 * (non-Javadoc)
 	 * @see android.os.AsyncTask#doInBackground(java.lang.Object[])
 	 */

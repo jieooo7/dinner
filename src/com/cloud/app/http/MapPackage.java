@@ -3,12 +3,13 @@
  * classes : com.cloud.app.http.MapPackage
  * author Andrew Lee
  * V 1.0.0
- * Create at 2014Äê6ÔÂ9ÈÕ ÏÂÎç2:29:13
+ * create at  2014å¹´7æœˆ1æ—¥ ä¸‹åˆ3:34:09
  * Copyright: 2014 Interstellar Cloud Inc. All rights reserved.
  */
 package com.cloud.app.http;
 
 import java.text.SimpleDateFormat;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -24,38 +25,26 @@ import com.cloud.app.debug.DebugUtil;
 import com.cloud.app.utils.MD5;
 import com.google.gson.Gson;
 
-/**
- * ¹«¹²Àà £¬Ïò·şÎñÆ÷·¢ËÍÊı¾İ£¬²¢·µ»ØmapÀàĞÍ
- * Ê¹ÓÃÊ±µ÷ÓÃÏàÓ¦µÄ head£¬para£¬result·¢ËÍĞÅÏ¢ ²¢ÉèÖÃpath
- * com.cloud.app.http.MapPackage
- * 
- * @author Andrew Lee <br/>
- *         create at 2014Äê6ÔÂ9ÈÕ ÏÂÎç2:29:13
- */
+
 /**
  * com.cloud.app.http.MapPackage
  * @author Andrew Lee <br/>
- * create at 2014Äê6ÔÂ16ÈÕ ÏÂÎç5:08:56
- */
-/**
- * com.cloud.app.http.MapPackage
- * @author Andrew Lee <br/>
- * create at 2014Äê6ÔÂ16ÈÕ ÏÂÎç5:09:00
+ * create at 2014å¹´7æœˆ1æ—¥ ä¸‹åˆ3:34:09
  */
 public class MapPackage {
 	
-//	¼ÓÃÜkey
+//	åŠ å¯†key
 	private final String CODEKEY = "1234";
-//	ÏµÍ³ĞÅÏ¢
+//	osç±»åˆ«
 	private final String OS = "1";
-//	°æ±¾ºÅ
+//	appç‰ˆæœ¬å·
 	private static final String VERSION="1.1.2";
-//	ÓòÃû
+//	åŸŸååœ°å€
 	public static final String PATH = "http://115.29.13.164/";
 	private Map<String, Object> headmap = new HashMap<String, Object>();
 	private Map<String, Object> paramap = new HashMap<String, Object>();
 	private Map<String, Object> resmap = new HashMap<String, Object>();
-//	ÍøÂç·µ»ØÖµ
+//	è¿”å›ç»“æœ
 	private Map<String, Object> backResult=new HashMap<String, Object>();
 	private String path = "";
 	private String uid="-1";
@@ -69,9 +58,9 @@ public class MapPackage {
 	public String getUid(){
 		return this.uid;
 	}
-//	Ä¬ÈÏÎª-1
+//	uidè®¾ç½®ï¼Œé»˜è®¤ä¸º-1ï¼ˆæ¸¸å®¢ï¼‰
 	public void setUid(Context context){
-//		´Ó±¾µØ´æ´¢»ñÈ¡
+//		sheredæ–‡ä»¶ä¸­è·å–
 		SharedPreferences sp = context.getSharedPreferences("userInfo", context.MODE_PRIVATE);
 		this.uid=sp.getString("uid", "-1");
 		DebugUtil.i("shared","999999"+sp.getString("uid", "-1"));
@@ -83,8 +72,7 @@ public class MapPackage {
 	}
 
 	/**
-	 * ÉèÖÃ·ÃÎÊÂ·¾¶
-	 *@param pathÂ·¾¶ ²ÎÊı
+	 *@param path ç”¨æˆ·è®¾ç½®çš„è·¯å¾„
 	 */
 	public void setPath(String path) {
 
@@ -97,14 +85,12 @@ public class MapPackage {
 	}
 
 	/**
-	 * ÉèÖÃhead
-	 *@param uid ÓÃ»§id
-	 *@param no ÊÖ»úÎ¨Ò»±êÊ¶·û
+	 *@param context å¤´ä¿¡æ¯æ‹¼è£…
 	 */
 	public void setHead(Context context) {
-//		»ñÈ¡ÊÖ»úÎ¨Ò»±êÊ¾
+//		æ‰‹æœºå”¯ä¸€æ ‡ç¤ºä¿¡æ¯
 		TelephonyManager telephonyManager=(TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-//		ÓÃ»§id
+//		ç”¨æˆ·id
 		setUid(context);
 		this.headmap.put("uid", this.getUid());
 		this.headmap.put("no", telephonyManager.getDeviceId());
@@ -123,7 +109,7 @@ public class MapPackage {
 	}
 
 	/**
-	 * ÉèÖÃparaĞÅÏ¢ £¬mapÀàĞÍ
+	 * paraä¿¡æ¯è®¾ç½®
 	 *@param key 
 	 *@param val
 	 */
@@ -140,7 +126,7 @@ public class MapPackage {
 	}
 
 	/**
-	 * ÉèÖÃ resultĞÅÏ¢ £¬mapÀàĞÍ
+	 * resultä¿¡æ¯æ‹¼è£…
 	 *@param key
 	 *@param val
 	 */
@@ -153,15 +139,14 @@ public class MapPackage {
 
 
 	/**
-	 * ·¢ËÍÇëÇó ²¢·µ»Ø ½á¹û
+	 * å‘é€è¯·æ±‚å¹¶è¿”å›ä¿¡æ¯
 	 * @return 
-	 *@return ·µ»ØÔ­Ê¼½âÎöÊı¾İ¶ÔÏó
 	 * @throws ExecutionException 
 	 * @throws InterruptedException 
 	 */
 	public void send() throws InterruptedException, ExecutionException {
 		Map<String, Object> map = new HashMap<String, Object>();
-//		³õÊ¼»¯£¬·ÀÖ¹Òì³£
+//		åŠ å…¥åˆå§‹åŒ–è®¾ç½®
 		this.headmap.put("", "");
 		this.paramap.put("","");
 		this.resmap.put("","");
@@ -169,9 +154,9 @@ public class MapPackage {
 		map.put("para", this.paramap);
 		map.put("result", this.resmap);
 		Gson gson = new Gson();
-//		µ÷ÓÃÒì²½ÍøÂç´«Êä
+//		å‘é€è¯·æ±‚
 		HttpSendRecv task=new HttpSendRecv(this.getpath(),gson.toJson(map));
-//		ÍøÂçÈ¡µÃ·µ»ØĞÅÏ¢
+//		è¿”å›ä¿¡æ¯
 		String backResult =task.execute().get();
 		DebugUtil.i("all", backResult);
 		this.backResult=GsonTools.getMaps(backResult.substring(backResult.indexOf("{")));
@@ -179,7 +164,7 @@ public class MapPackage {
 	}
 
 	/**
-	 *@return ·µ»Øhead mapĞÅÏ¢
+	 *@return  è¿”å›å¤´ä¿¡æ¯
 	 */
 	@SuppressWarnings("unchecked")
 	public Map<String, String> getBackHead() {
@@ -191,7 +176,7 @@ public class MapPackage {
 	}
 
 	/**
-	 *@return ·µ»Øpara map ĞÅÏ¢
+	 *@return  è¿”å›paraä¿¡æ¯
 	 */
 	@SuppressWarnings("unchecked")
 	public Map<String, String> getBackPara() {
@@ -203,12 +188,12 @@ public class MapPackage {
 	}
 
 	/**
-	 *@return ·µ»Ø list ½á¹ûĞÅÏ¢
+	 *@return è¿”å›resultä¿¡æ¯
 	 */
 	@SuppressWarnings("unchecked")
 	public List<Map<String, String>> getBackResult() {
 		try{
-//			ÊÇÒ»¸öobjectÀàĞÍµÄ£¬castÎªlist
+//			list mapå½¢å¼çš„
 		return (List<Map<String, String>>) this.backResult.get("result");
 		}catch(Exception e){
 			return null;

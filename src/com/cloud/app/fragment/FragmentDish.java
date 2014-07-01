@@ -9,6 +9,7 @@
 package com.cloud.app.fragment;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,7 @@ import com.cloud.app.dinner.R;
  * @author Andrew Lee <br/>
  * create at 2014��6��27�� ����11:18:55
  */
-public class FragmentDish {
+public class FragmentDish extends Fragment{
 	private static final String TAG = "FragmentDish";
 	 public View onCreateView(LayoutInflater inflater, ViewGroup container,
 		        Bundle savedInstanceState) {

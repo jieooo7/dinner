@@ -74,11 +74,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:id="@+id/line0"
         android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            
             android:layout_marginLeft="26dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal" >
@@ -136,6 +138,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/orderTv0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -189,6 +192,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/collectTv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -242,6 +246,7 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/couponTv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
@@ -294,6 +299,7 @@
              <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/creditsTv3"
                 android:layout_marginRight="15dp"
                 android:minWidth="25sp"
                 android:background="@drawable/corner_style"
@@ -344,6 +350,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/accountTv4"
                 android:layout_marginRight="15dp"
                 android:minWidth="25sp"
                 android:layout_alignParentRight="true"
