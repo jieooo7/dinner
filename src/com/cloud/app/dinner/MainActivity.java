@@ -30,7 +30,6 @@ import com.cloud.app.fragment.FragmentDish;
 import com.cloud.app.fragment.FragmentRes;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
-
 /**
  * com.cloud.app.dinner.MainActivity
  * 
@@ -58,20 +57,20 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	private String creditsStv3;
 	private String accountStv4;
 	private LinearLayout line0;
-	
-	private SharedPreferences mainShared=null;
+
+	private SharedPreferences mainShared = null;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);// 去掉标题
-		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN); 
+		getWindow().setSoftInputMode(
+				WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 		FragmentManager manage = getSupportFragmentManager();
 		setContentView(R.layout.right_content);
-		mainShared=getApplicationContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-//		写入sharepreference 操作
-		
-		
-		
+		mainShared = getApplicationContext().getSharedPreferences("userInfo",
+				Context.MODE_PRIVATE);
+		// 写入sharepreference 操作
+
 		mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
 		mTabHost.setup(this, manage, R.id.realcontent);
 		indicator1 = getIndicatorView("优惠信息", R.layout.tab_wid);
@@ -90,7 +89,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		ivSearch.setOnClickListener(this);
 		editSearch = (EditText) findViewById(R.id.right_search_edit);
 
-		// initSlidingMenu();
+		initSlidingMenu();
+		initLeftMenu();
+		line0 = (LinearLayout) findViewById(R.id.line0);
+		line0.setOnClickListener(this);
 		// SlidingMenu menu = new SlidingMenu(this);
 		// menu.setMode(SlidingMenu.LEFT);
 
@@ -108,42 +110,33 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);// 允许从屏幕的什么范围滑出SlidingMenu
 		menu.setMenu(R.layout.left_menu);// 设置SlidingMenu使用的layout文件
 		menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);// 附加到activity上
-		menu.toggle();
-		initLeftMenu();
-		line0=(LinearLayout)findViewById(R.id.line0);
-		line0.setOnClickListener(this);
-		
-		
-		
-
 	}
 
-	 private View getIndicatorView(String name, int layoutId) {
+	private View getIndicatorView(String name, int layoutId) {
 		View v = getLayoutInflater().inflate(layoutId, null);
 		TextView tv = (TextView) v.findViewById(R.id.tabText);
 		tv.setText(name);
 		return v;
 	}
-	 
-	 
-	protected void initLeftMenu(){
-		
-		this.orderStv0=mainShared.getString("order", "0");
-		this.collectStv1=mainShared.getString("collect", "0");
-		this.couponStv2=mainShared.getString("coupon", "0");
-		this.creditsStv3=mainShared.getString("credits", "0");
-		this.accountStv4=mainShared.getString("account", "0");
-		this.orderTv0=(TextView)findViewById(R.id.orderTv0);
-		this.collectTv1=(TextView)findViewById(R.id.collectTv1);
-		this.couponTv2=(TextView)findViewById(R.id.couponTv2);
-		this.creditsTv3=(TextView)findViewById(R.id.creditsTv3);
-		this.accountTv4=(TextView)findViewById(R.id.accountTv4);
+
+	protected void initLeftMenu() {
+
+		this.orderStv0 = mainShared.getString("order", "0");
+		this.collectStv1 = mainShared.getString("collect", "0");
+		this.couponStv2 = mainShared.getString("coupon", "0");
+		this.creditsStv3 = mainShared.getString("credits", "0");
+		this.accountStv4 = mainShared.getString("account", "0");
+		this.orderTv0 = (TextView) findViewById(R.id.orderTv0);
+		this.collectTv1 = (TextView) findViewById(R.id.collectTv1);
+		this.couponTv2 = (TextView) findViewById(R.id.couponTv2);
+		this.creditsTv3 = (TextView) findViewById(R.id.creditsTv3);
+		this.accountTv4 = (TextView) findViewById(R.id.accountTv4);
 		this.orderTv0.setText(orderStv0);
 		this.collectTv1.setText(collectStv1);
 		this.couponTv2.setText(couponStv2);
 		this.creditsTv3.setText(creditsStv3);
 		this.accountTv4.setText(accountStv4);
-		
+
 	}
 
 	protected void onDestroy() {
@@ -161,8 +154,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.left_button:
-			initSlidingMenu();
-			// menu.setMode(SlidingMenu.LEFT);
+			menu.toggle();
 			break;
 
 		case R.id.right_search_button:
@@ -172,9 +164,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 				editSearch.setVisibility(View.GONE);
 			}
 			break;
-			
+
 		case R.id.line0:
-//			initSlidingMenu();
 			menu.toggle();
 			break;
 
